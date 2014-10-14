@@ -1,0 +1,39 @@
+﻿<!--
+This software is subject to the license described in the license.txt file included with this software distribution.You may not use this file except in compliance with this license. 
+Copyright © Dynastream Innovations Inc. 2012
+All rights reserved.
+-->
+<UserControl x:Class="AntPlusRacer.Fit_ConfigPanelDevice"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="800">
+    <Border BorderBrush="Black" BorderThickness="0,0,0,1">
+        <Viewbox Margin="0,5,20,5">
+            <UniformGrid Rows="2">
+                <Label Name="Label_Description" FontWeight="ExtraBold" HorizontalAlignment="Center"></Label>
+                <Label FontWeight="ExtraBold" HorizontalAlignment="Center">Status</Label>
+                <Label>
+                    <TextBlock FontWeight="ExtraBold" HorizontalAlignment="Center">Distance<LineBreak/>Counter</TextBlock>
+                </Label>
+                <Label FontWeight="ExtraBold" HorizontalAlignment="Center">Speed</Label>
+                <Label FontWeight="ExtraBold" HorizontalAlignment="Center">Cadence</Label>
+                <Label FontWeight="ExtraBold" HorizontalAlignment="Center">Device ID</Label>
+                <Label FontWeight="ExtraBold" HorizontalAlignment="Center">Search</Label>
+                <Label>
+                    <TextBlock FontWeight="ExtraBold" HorizontalAlignment="Center" TextAlignment="Center">Search<LineBreak/>Device ID</TextBlock>
+                </Label>
+                <Label Name="Label_Description2"></Label>
+                <Label Name="Label_Status" HorizontalAlignment="Center">Unknown</Label>
+                <Label Name="Label_Dist" HorizontalAlignment="Center">---</Label>
+                <Label Name="Label_Speed" HorizontalAlignment="Center">---</Label>
+                <Label Name="Label_Cadence" HorizontalAlignment="Center">---</Label>
+                <Label Name="Label_DevID" HorizontalAlignment="Center">---</Label>
+                <Button Name="Button_Reset" Grid.RowSpan="2" HorizontalAlignment="Stretch" Margin="3" Click="Button_Reset_Click">Reset</Button>
+                <TextBox Name="TextBox_SearchDeviceId" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" Margin="3">0</TextBox>
+            </UniformGrid>
+        </Viewbox>
+    </Border>
+</UserControl>

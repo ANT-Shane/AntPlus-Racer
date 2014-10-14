@@ -1,0 +1,22 @@
+﻿<!--
+This software is subject to the license described in the license.txt file included with this software distribution.You may not use this file except in compliance with this license. 
+Copyright © Dynastream Innovations Inc. 2012
+All rights reserved.
+-->
+<UserControl x:Class="AntPlusRacer.AntConfigPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="400" IsVisibleChanged="Control_IsVisibleChanged">
+    <Grid Name="Grid_Main">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ListBox Name="ListBox_statusPanelHolder" Grid.Row="0" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Hidden" SelectionChanged="ListBox_statusPanelHolder_SelectionChanged">
+            <ListBoxItem>FitConfigPanelDevice panels listed here in this listbox</ListBoxItem>
+        </ListBox>
+    </Grid>
+</UserControl>

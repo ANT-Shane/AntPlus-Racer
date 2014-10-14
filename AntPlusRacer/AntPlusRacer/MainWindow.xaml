@@ -1,0 +1,30 @@
+﻿<!--
+This software is subject to the license described in the license.txt file included with this software distribution.You may not use this file except in compliance with this license. 
+Copyright © Dynastream Innovations Inc. 2012
+All rights reserved.
+-->
+<Window x:Class="AntPlusRacer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ant+ Racer" Height="600" Width="1000" WindowState="Maximized" KeyUp="Window_KeyUp" Background="Black" WindowStyle="None">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="0,5,0,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <!--<ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="3*"/>-->
+                <ColumnDefinition Width="60*"/><!--12 when using icon-title-promo-->
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="1" Source="Images\ANT+ Full Logo.png" HorizontalAlignment="Left"/><!--Icon-->
+            <!--<Image Grid.Column="2" Source="Images\title.png" HorizontalAlignment="Left"/>
+            <Image Grid.Column="4" Source="Images\promo.png" HorizontalAlignment="Right"/>-->
+        </Grid>
+        <Grid Grid.Row="1" Name="Grid_Races"/>
+    </Grid>
+</Window>

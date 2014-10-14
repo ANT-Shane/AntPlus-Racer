@@ -1,0 +1,83 @@
+----------------------------
+ANT+ Racer
+----------------------------
+This application allows racing with various ANT+ supported devices
+Features:
+-Race against other racers on ANT+ devices, simulated ANT+ output, or solo against track records
+-Race between multiple device types
+-Saves records of race times for each track
+-Up to three simultaneous races each of multiple racers supported
+-Primitive ANT remote control capabilities
+Requires:
+-Currently only works with an ANT USB2 device
+
+License/Copyright
+----------------------------
+This software is subject to the license described in the license.txt file included with this software distribution.You may not use this file except in compliance with this license. 
+Copyright © Dynastream Innovations Inc. 2012
+All rights reserved.
+
+Supported Racing Sources
+----------------------------
+The application currently supports the following data sources:
+-ANT+ Bike Speed sensor
+-ANT+ Bike Speed w/ separate cadence sensor
+-ANT+ Bike Speed and Cadence sensors
+-ANT+ FIT enabled fitness devices. Tested with:
+   -treadmill
+   -rowing machine
+   -stationary bike
+   -nordic skiing machine
+   -elliptical machine
+   
+Logos and Branding
+----------------------------
+We hope that if you use this application to connect to ANT+ devices that you keep the ANT+ logo visible during the race to support the growth and visibility of the ANT+ eco-system. Displaying the logo does not however imply in any way that we endorse or support your version of the application or anything that it is used for.
+Currently, there is space provisioned in the upper right corner of the application for adding additional logos or branding to the display.
+
+Configuration File:
+----------------------------
+To use ANT+ racer effectively, you need to setup the appropriate configuration in the 'AntPlusRacerConfigdb.xml' file. If this file does not exist in the racer directory it will be created with the default settings on the next start up. The configuration is loaded when the application starts up, so editing it while the applicaiton is running will not apply until the next start up.
+The configuration is a simple xml file. Here is an explanation of the included elements:
+<autoLoadAvailableRaceSourcesForRace> true = automatically select all connected devices in the new racer screen
+<keepRecords> true = save records of results after each race
+<displayMph>  true = mph, false = kph
+<fastRecords_noNames> true = disable saving names for records after race, instead naming each 'anonymous'
+<RecordScreenSaverTimeout_negativeIsOff> value > 0 = number of seconds the race configuration screen sits idle before the records automatically start showing as a screensaver. If the value is < 0 the record screensaver feature is disabled.
+<remoteControlDevNum_negativeIsOff> value > 0 = sets the device id of the remote control broadcast. If the value is < 0 the remote control feature is disabled.
+
+<enabledRacerInputs> controls which device types and how many of each are searched for and connected to. Once connected to a device each racer input becomes a valid option to add to a race.
+   <RacerInput> child of <enabledRacerInputs> to specify details of the device to connect to
+      <displayName> child of <RacerInput> to specify what the device is called in the display and in the records
+      <type>child of <RacerInput> to specify what type of device to search for. All valid types should be listed in the <availableRacerInputList> below. Note: the 'ant_FitEqpmt' type will connect to an ANT FIT enabled device and automatically determine the fitness equipment type.
+      <defaultDeviceId>child of <RacerInput> to specify the ANT device ID of the given device, if you set it to 0 it will search for any device of the given type.
+      
+<enabledRaceTracks> controls the track length options that show up when configuring a race, and that records are saved under
+   <RaceTrack>  child of <enabledRaceTracks> to specify details of an available track
+      <sportType> child of <RaceTrack> to specify the sport this track is available for
+      <distance> child of <RaceTrack> to specify the distance of this track
+
+<availableRacerInputList> reference section listing all supported input types
+
+
+Record Database:
+----------------------------
+-Database is stored as xml, so you can edit records manually if errors occur
+-'Record Viewer.html' will show the records in a more friendly format in a web browser if you are xml-challenged
+
+Keyboard Shortcuts:
+----------------------------
+Shift + '+' => Open new panel, currently 3 max
+F1, F2, F3 => Toggle Sidebar Menus for panels 1,2, and 3 respectively
+Alt + 'F4' => Exit
+
+Remote Control:
+----------------------------
+-Currently there is support for an ANT remote control interface to control the screen and starting and stopping racers. The message interface is defined in 'ANT+ Racer ANT Remote Interface.xlsx'
+-Although the messaging is all defined, the remote functionality has not been thoroughly tested or developed, so don't expect that
+-An android app exists to send the commands to control the race, but it was not working well and has not yet been released publically
+
+Compiling From Source:
+----------------------------
+ANT+ Network Key
+To compile from source you will have to manually add the ANT+ Network Key because distribution of source code containing the ANT+ Network Key is prohibited. You may not add the ANT+ Network Key to this source code and republish it. The ANT+ Network Key is available to ANT+ Adopters. Please refer to http://thisisant.com to become an ANT+ Adopter and access the key.

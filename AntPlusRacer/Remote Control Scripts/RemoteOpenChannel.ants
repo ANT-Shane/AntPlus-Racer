@@ -1,0 +1,31 @@
+###ANT_SCRIPT_VERSION: 0.01
+#This version tag is required in all scripts for forward compatibility
+
+oOpening remote control channel...
+#Reset the USB stick so we are in a known state
+w[4A]
+r![6F][20]
+
+#Assign Channel
+w[42][00][00][00][00]   #Slave
+r![40][00][42][00]
+
+#Set channel period
+w[43][00][FD][1F]       #8189
+r![40][00][43][00]
+
+#Set channel RF
+w[45][00][4B]           #+75MHz
+r![40][00][45][00]
+
+#Set channel ID
+w[51][00][DF][58][60][02]  #22751,96,2
+r![40][00][51][00]
+
+#Open channel
+w[4B][00]
+r![40][00][4B][00]
+
+#wait until channel connection is established
+r!60000[4E][00][?][?][?][?][?][?][?][?]
+oANT+Racer Remote channel connection has been established.

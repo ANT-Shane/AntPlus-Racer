@@ -1,0 +1,7 @@
+###ANT_SCRIPT_VERSION: 0.01
+#This version tag is required in all scripts for forward compatibility
+
+oDeleting Racer 0 on Panel 0...
+w[4F][00][32][10][00][04][0][FF]
+r![40][00][01][05]
+r![4f][00][32][10][00][?][?][?][?][?]

@@ -1,0 +1,19 @@
+﻿<!--
+This software is subject to the license described in the license.txt file included with this software distribution.You may not use this file except in compliance with this license. 
+Copyright © Dynastream Innovations Inc. 2012
+All rights reserved.
+-->
+<Application x:Class="AntPlusRacer.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Startup="Application_Startup">
+    <Application.Resources>
+
+        <ResourceDictionary >
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ANTWareII_Theme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

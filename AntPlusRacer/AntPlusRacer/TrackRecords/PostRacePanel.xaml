@@ -1,0 +1,33 @@
+﻿<!--
+This software is subject to the license described in the license.txt file included with this software distribution.You may not use this file except in compliance with this license. 
+Copyright © Dynastream Innovations Inc. 2012
+All rights reserved.
+-->
+<UserControl x:Class="AntPlusRacer.TrackRecords.PostRacePanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="400"
+             VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Black">
+    <Viewbox>
+        <StackPanel>
+            <Label Name="Label_RacerTag" Height="23" HorizontalAlignment="Center" VerticalAlignment="Top">Racer n : mmm targetType</Label>
+            <Label Name="Label_ListResultTag" Height="23" HorizontalAlignment="Center" VerticalAlignment="Top">You finished nnn of mmm results</Label>
+            <StackPanel Orientation="Horizontal" Margin="0,1,0,1">
+                <Label Height="23" Width="50" HorizontalAlignment="Right"  HorizontalContentAlignment="Right" VerticalContentAlignment="Center" VerticalAlignment="Top">Name:</Label>
+                <TextBox Height="23" HorizontalAlignment="Left" Name="textBox_FullName" VerticalAlignment="Top" Width="140"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,1,0,1">
+                <Label Height="23" Width="50" HorizontalAlignment="Right"  HorizontalContentAlignment="Right" VerticalContentAlignment="Center" VerticalAlignment="Top">Phone:</Label>
+                <TextBox Height="23" HorizontalAlignment="Left" Name="textBox_phone" VerticalAlignment="Top" Width="140"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,1,0,1">
+                <Label Height="23" Width="50" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" VerticalAlignment="Top">Email:</Label>
+                <TextBox Height="23" HorizontalAlignment="Left" Name="textBox_email" VerticalAlignment="Top" Width="140"/>
+            </StackPanel>
+            <Button Content="Finished" Height="23" HorizontalAlignment="Center" Name="button_Finished" VerticalAlignment="Top" Width="75" Click="button_Finished_Click" />
+        </StackPanel>
+    </Viewbox>
+</UserControl>

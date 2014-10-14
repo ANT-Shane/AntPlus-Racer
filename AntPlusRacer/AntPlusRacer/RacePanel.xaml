@@ -1,0 +1,72 @@
+﻿<!--
+This software is subject to the license described in the license.txt file included with this software distribution.You may not use this file except in compliance with this license. 
+Copyright © Dynastream Innovations Inc. 2012
+All rights reserved.
+-->
+<UserControl x:Class="AntPlusRacer.RacePanel"
+             xmlns:proj="clr-namespace:AntPlusRacer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="400"
+             VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MouseMove="UserControl_MouseMove" KeyUp="UserControl_KeyUp">
+    <Border Name="Border" BorderBrush="Black" BorderThickness="12" CornerRadius="0">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Name="ColumnDefinition_menuCol" Width="*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Border BorderBrush="Black" BorderThickness="0,0,1,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="6*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="6*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="6*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="6*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="6*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="1" Grid.Column="1" Name="button_NewRace" Click="button_NewRace_Click">
+                        <Viewbox>
+                            <Label Content="New Race"/>
+                        </Viewbox>
+                    </Button>
+                    <Button Grid.Row="3" Grid.Column="1" Name="button_ViewRecords" Click="button_ViewRecords_Click">
+                        <Viewbox>
+                            <Label Content="View Records"/>
+                        </Viewbox>
+                    </Button>
+                    <Button Grid.Row="5" Grid.Column="1" Name="button_feConfig" Click="button_AntConfig_Click">
+                        <Viewbox>
+                            <Label Content="ANT+ Config"/>
+                        </Viewbox>
+                    </Button>
+                    <Button Grid.Row="7" Grid.Column="1" Name="button_close" Click="button_close_Click">
+                        <Viewbox>
+                            <Label Content="Close Panel"/>
+                        </Viewbox>
+                    </Button>
+                    <Button Grid.Row="9" Grid.Column="1" Name="button_hide" Click="button_hide_Click">
+                        <Viewbox>
+                            <Label Content="&lt;&lt; Hide Menu"/>
+                        </Viewbox>
+                    </Button>
+                </Grid>
+            </Border>
+            <Grid Name="Grid_Content" Grid.Column="1">
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

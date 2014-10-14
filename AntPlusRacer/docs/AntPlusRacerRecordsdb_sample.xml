@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<RecordDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <recordBook>
+    <TrackRecordList>
+      <sportType>Biking</sportType>
+      <trackDistance>500</trackDistance>
+      <trackRecords>
+        <RecordData>
+          <FirstName>30kph</FirstName>
+          <PhoneNumber />
+          <Email />
+          <DataSourceName>Bike 1</DataSourceName>
+          <recordValue>64.6</recordValue>
+          <recordDate>2012-02-10T15:24:39.9641379-07:00</recordDate>
+        </RecordData>
+        <RecordData>
+          <FirstName>Slower</FirstName>
+          <LastName>Byalot</LastName>
+          <PhoneNumber>403-555-6678</PhoneNumber>
+          <Email>slow@hotmail.com</Email>
+          <DataSourceName>Bike 2</DataSourceName>
+          <recordValue>164.6</recordValue>
+          <recordDate>2012-02-08T15:24:39.9641379-07:00</recordDate>
+        </RecordData>
+      </trackRecords>
+    </TrackRecordList>
+    <TrackRecordList>
+      <sportType>Biking</sportType>
+      <trackDistance>1000</trackDistance>
+      <trackRecords>
+        <RecordData>
+          <FirstName>30kph</FirstName>
+          <PhoneNumber />
+          <Email />
+          <DataSourceName>Bike 1</DataSourceName>
+          <recordValue>134.6</recordValue>
+          <recordDate>2012-02-10T15:24:39.9641379-07:00</recordDate>
+        </RecordData>
+        <RecordData>
+          <FirstName>Slower</FirstName>
+          <LastName>Byalot</LastName>
+          <PhoneNumber>403-555-6678</PhoneNumber>
+          <Email>slow@hotmail.com</Email>
+          <DataSourceName>Bike 2</DataSourceName>
+          <recordValue>364.6</recordValue>
+          <recordDate>2012-02-08T15:24:39.9641379-07:00</recordDate>
+        </RecordData>
+      </trackRecords>
+    </TrackRecordList>
+    <TrackRecordList>
+      <sportType>Rowing</sportType>
+      <trackDistance>200</trackDistance>
+      <trackRecords>
+        <RecordData>
+          <FirstName>Anon</FirstName>
+          <LastName>Ymous</LastName>
+          <PhoneNumber />
+          <Email />
+          <DataSourceName>Bike 1</DataSourceName>
+          <recordValue>64.6</recordValue>
+          <recordDate>2012-02-10T15:24:39.9641379-07:00</recordDate>
+        </RecordData>
+      </trackRecords>
+    </TrackRecordList>
+    <TrackRecordList>
+      <sportType>Running</sportType>
+      <trackDistance>250</trackDistance>
+      <trackRecords>
+      </trackRecords>
+    </TrackRecordList>
+  </recordBook>
+</RecordDatabase>

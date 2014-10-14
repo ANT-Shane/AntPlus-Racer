@@ -1,0 +1,11 @@
+###ANT_SCRIPT_VERSION: 0.01
+#This version tag is required in all scripts for forward compatibility
+
+oAdding Flint Lockwood + phone# on data src 2 as new racer on Panel 0...
+w[50][00][32][10][00][04][FF][01][1][5]
+w[50][20][46][6c][69][6e][74][2][8][4c]
+w[50][40][6f][63][6b][77][6f][6f][64][3]
+w[50][60][8][35][35][35][2d][31][32][33]
+w[50][a0][34][0]
+r![40][00][01][05]
+r![4f][00][32][10][00][?][?][?][?][?]

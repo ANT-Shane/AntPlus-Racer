@@ -1,0 +1,77 @@
+﻿<!--
+This software is subject to the license described in the license.txt file included with this software distribution.You may not use this file except in compliance with this license. 
+Copyright © Dynastream Innovations Inc. 2012
+All rights reserved.
+-->
+<UserControl x:Class="AntPlusRacer.RacerInfoPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="400"
+             Margin="5">
+    <Border BorderBrush="White" Background="White" BorderThickness="10" CornerRadius="0">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border BorderBrush="White" BorderThickness="0" Grid.Column="1" Grid.RowSpan="2">
+                <Grid Name="Grid_InfoPanel">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="100*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="100*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border BorderBrush="White" Background="Black" BorderThickness="0" Grid.Row="0" Grid.Column="0">
+                        <Viewbox>
+                            <Label Name="Label_Speed" Content="0.00 kph" VerticalAlignment="Center"/>
+                        </Viewbox>
+                    </Border>
+                    <Border BorderBrush="White" Background="Black" BorderThickness="0" Grid.Row="0" Grid.Column="2">
+                        <Viewbox>
+                            <Label Name="Label_Cadence" Content="0 rpm" VerticalAlignment="Center"/>
+                        </Viewbox>
+                    </Border>
+                    <Border Name="Border_ProgressLabelHolder" Background="Black" BorderBrush="White" BorderThickness="0" Grid.Row="2" Grid.Column="0">
+                        <Viewbox>
+                            <Label Name="Label_Progress" Content="0.00/Goal"/>
+                        </Viewbox>
+                    </Border>
+                    <Border Name="Border_PowerLabelHolder" Background="Black" BorderBrush="White" BorderThickness="0" Grid.Row="2" Grid.Column="2">
+                        <Viewbox>
+                            <Label Name="Label_Power" Content="0 W" VerticalAlignment="Center"/>
+                        </Viewbox>
+                    </Border>              
+                </Grid>
+            </Border>
+            <ProgressBar Grid.Row="1" Value="0" HorizontalAlignment="Stretch" Margin="0,3,10,0" Name="progressBar1" VerticalAlignment="Stretch"/>
+            <Grid Name="Grid_AnimationDisplay" Margin="0" Background="White">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Name="Col_LeftPush" Width="0*"/>
+                    <ColumnDefinition Name="Col_Racer" Width="Auto"/>
+                    <ColumnDefinition Name="Col_RightFill" Width="4*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="17*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+            </Grid>
+            <Border Name="Border_AnnouncementFade" BorderThickness="0" Background="White" Opacity="0.5"/>
+            <Viewbox>
+                <Label Name="Label_LoudAnnouncement" Foreground="Black"/>
+            </Viewbox>
+        </Grid>
+    </Border>
+</UserControl>

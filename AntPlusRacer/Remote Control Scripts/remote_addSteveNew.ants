@@ -1,0 +1,11 @@
+###ANT_SCRIPT_VERSION: 0.01
+#This version tag is required in all scripts for forward compatibility
+
+oAdding Steve + email on data src 1 as new racer on Panel 0...
+w[50][00][32][10][00][04][FF][01][1][5]
+w[50][20][53][74][65][76][65][4][15][79]
+w[50][40][65][6c][6c][6f][77][40][72][75]
+w[50][60][6e][72][75][6e][6a][75][6d][70]
+w[50][a0][2e][63][6f][6d][0]
+r![40][00][01][05]
+r![4f][00][32][10][00][?][?][?][?][?]

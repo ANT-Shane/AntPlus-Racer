@@ -1,0 +1,127 @@
+<!--
+This software is subject to the license described in the license.txt file included with this software distribution.You may not use this file except in compliance with this license. 
+Copyright © Dynastream Innovations Inc. 2012
+All rights reserved.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+   <style type="text/css">
+      .ContactInfo {display:none;}
+   </style>
+   <script type="text/javascript">
+      var showContactInfo = false;
+      var recordFile = null;
+      
+      function load()
+      {
+         if (!window.ActiveXObject)
+         {
+            //Remove activeX prompt since we don't need it
+            clearRecordDisplay();
+         }
+         
+         document.getElementById('recFileSelect').onchange = selectRecordFile;
+      }
+      
+      function selectRecordFile()
+      {  
+         if (window.ActiveXObject)
+            recordFile = document.getElementById('recFileSelect').value;
+         else
+            recordFile = document.getElementById('recFileSelect').files[0];
+         loadRecordFile();
+      }
+      
+      function loadRecordFile()
+      {
+         clearRecordDisplay();
+         if (window.ActiveXObject)
+         {
+            myXML.XMLDocument.load(recordFile);
+            displayRecords(null);
+         }
+         else
+         {
+            var reader = new FileReader();
+            reader.onload = displayRecords;
+            reader.readAsText(recordFile);
+         }
+      }
+      
+      function refreshRecord()
+      {
+         if(recordFile == null)
+         {
+            document.getElementById("example").appendChild("Need to select record file first");
+            return
+         }         
+         
+         loadRecordFile();		
+      }
+      
+      function clearRecordDisplay()
+      {
+         var displayelement = document.getElementById("example");
+         
+         if ( displayelement.hasChildNodes() )
+         {
+             while ( displayelement.childNodes.length >= 1 )
+             {
+                 displayelement.removeChild( displayelement.firstChild );       
+             } 
+         }
+      }
+      
+      function displayRecords(readerCompleteEvent)
+      {         
+         // code for IE
+         if (readerCompleteEvent == null)
+         {
+            var xslDoc = new ActiveXObject("Microsoft.XMLDOM");
+            xslDoc.async = false;
+            xslDoc.loadXML(xslSheet);
+            
+            var resultDocument = myXML.XMLDocument.transformNode(xslDoc);
+            document.getElementById("example").innerHTML = resultDocument;
+         }
+         else  //code for real browsers
+         {
+            var recordXmlStr = readerCompleteEvent.target.result;
+         
+            var parser = new DOMParser();
+            var xmlRecsAsDom = parser.parseFromString(recordXmlStr, "application/xml");
+            var xslAsDom = parser.parseFromString(xslSheet, "application/xml");
+            
+            xsltProcessor=new XSLTProcessor();
+            xsltProcessor.importStylesheet(xslAsDom);
+            var resultDocument = xsltProcessor.transformToFragment(xmlRecsAsDom, document); 
+            document.getElementById("example").appendChild(resultDocument);
+         }
+      }
+      
+      function toggleContactDetails()
+      {
+         showContactInfo = !showContactInfo;
+         document.styleSheets[0].disabled = showContactInfo;
+      }
+      
+      var xslSheet = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"><xsl:output method=\"html\"/><xsl:template match=\"/\"><xsl:for-each select=\"RecordDatabase/recordBook/TrackRecordList\"><xsl:sort select=\"sportType\"/><xsl:sort select=\"trackDistance\"/><h2><xsl:value-of select=\"trackDistance\"/>m <xsl:value-of select=\"sportType\"/> Records</h2><table border=\"0\"><tr bgcolor=\"#9acd32\"><th>Name</th><th>Record (s)</th><th>Time of Record</th><th>Data Src Used</th><th class=\"ContactInfo\">Phone</th><th class=\"ContactInfo\">Email</th></tr><xsl:for-each select=\"trackRecords/RecordData\"><tr><td><xsl:value-of select=\"FirstName\"/><xsl:text> </xsl:text><xsl:value-of select=\"LastName\"/></td><td><xsl:value-of select=\"recordValue\"/></td><td><xsl:value-of select=\"recordDate\"/></td><td><xsl:value-of select=\"DataSourceName\"/></td><td class=\"ContactInfo\"><xsl:value-of select=\"PhoneNumber\"/></td><td class=\"ContactInfo\"><xsl:value-of select=\"Email\"/></td>        </tr></xsl:for-each></table></xsl:for-each></xsl:template></xsl:stylesheet>";
+   </script>
+</head>
+<title>Records w/ Details</title>
+<body onload="load()">
+   <button onclick="refreshRecord()">Refresh</button>
+   <div id="example" >To use this viewer in IE, ensure you choose to 'Allow blocked content' on the activeX warning, or else you will not be able to load the record database file</div>
+   <br><br>
+   <button onclick="toggleContactDetails()">Toggle Contact Details</button>
+   <object id="myXML" CLASSID="clsid:550dda30-0541-11d2-9ca9-0060b0ec3d39" width="0" height="0"></object>
+   <div id="fileSelect">
+      <br><br>
+      Select record file:
+      <input type="file" id="recFileSelect" name="selectedRecFile" size="40"></input>
+   </div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+###ANT_SCRIPT_VERSION: 0.01
+#This version tag is required in all scripts for forward compatibility
+
+oChanging racer 0 to data src 1 and name to Brent on Panel 0...
+w[50][00][32][10][00][04][00][01][1][5]
+w[50][a0][42][72][65][6e][74][0]
+r![40][00][01][05]
+r![4f][00][32][10][00][?][?][?][?][?]
